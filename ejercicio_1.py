@@ -1,6 +1,3 @@
-#Matias Tapia
-#Ejercicio 1
-
 def calculo_letras_por_palabra(palabra, letra):
   #Se inicializa una suma en 0 para contar la letra repetida
   suma = 0
@@ -11,8 +8,17 @@ def calculo_letras_por_palabra(palabra, letra):
   for x in palabra:
     if( letra == x):
       suma += 1
-  return suma
-  
+
+  if(suma == 1):
+    suma = str(suma)
+    print("La letra '" + letra + "' en la palabra '" + palabra + "' se repite " + suma + " vez")
+  elif(suma == 0):
+    suma = str(suma)
+    print("La letra '" + letra + "' en la palabra '" + palabra + "' nose se repite ninguna vez")
+  else:
+    suma = str(suma)
+    print("La letra '" + letra + "' en la palabra '" + palabra + "' se repite " + suma + " veces")
+
 #Función principal
 def main():
   #Inicio de variables input
@@ -23,16 +29,7 @@ def main():
   letra = input("Ingrese letra: ")
 
   #Uso funcion
-  suma = calculo_letras_por_palabra(palabra, letra)
-  if(suma == 1):
-    suma = str(suma)
-    print("La letra '" + letra + "' en la palabra '" + palabra + "' se repite " + suma + " vez")
-  elif(suma == 0):
-    suma = str(suma)
-    print("La letra '" + letra + "' en la palabra '" + palabra + "' nose se repite ninguna vez")
-  else:
-    suma = str(suma)
-    print("La letra '" + letra + "' en la palabra '" + palabra + "' se repite " + suma + " veces")
+  calculo_letras_por_palabra(palabra, letra)
 
 #Punto de entrada
 if __name__ == "__main__":
