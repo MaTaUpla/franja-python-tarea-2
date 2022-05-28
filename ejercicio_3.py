@@ -10,21 +10,22 @@ def calculo_valor_entrada(edad):
     precio = 3500
   else:
     precio = 8000
-  return str(precio)
+  edad = str(edad)
+  if(precio == 0):
+    if(int(edad) == 1):
+      print("La entrada es gratis ya que la edad del cliente es de " + edad + " año")
+    else:
+      print("La entrada es gratis ya que la edad del cliente es de " + edad + " años")
+  else:
+    print("La entrada tiene un valor de $" + str(precio) + " ya que la edad del cliente es de " + edad + " años")
 
 #Función principal
 def main():
   print("####################")
   print("Comprar de entradas")
-  edad = input("Ingrese su edad: ")
+  edad = int(input("Ingrese su edad: "))
   print("####################")
-  precio = calculo_valor_entrada(int(edad))
-
-  print("")
-  if(int(precio) == 0):
-    print("La entrada es gratis ya que la edad del cliente es " + edad + " año(s)")
-  else:
-    print("La entrada tiene un valor de $" + precio + " ya que la edad del cliente es " + edad + " años")
+  calculo_valor_entrada(edad)
 
 #Punto de entrada
 if __name__ == "__main__":
